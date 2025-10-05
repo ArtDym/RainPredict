@@ -7,7 +7,7 @@ from pathlib import Path
 
 #MODEL_DIR  = Path("model")
 #MODEL_PATH = MODEL_DIR / "rain_pkg.joblib"
-MODEL_PATH = "rain_pkg.joblib"
+MODEL_PATH = Path("rain_pkg.joblib")
 FILE_ID    = st.secrets["MODEL_FILE_ID"]
 
 def predict_input(single_input):
