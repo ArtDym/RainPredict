@@ -26,9 +26,10 @@ def download_model():
         url = f"https://drive.google.com/uc?id={FILE_ID}"
         st.write("⬇️ Downloading model from Google Drive...")
         gdown.download(url, str(MODEL_PATH), quiet=False)
+        st.write("⬇️  Model downloaded from Google Drive...")
 
 # завантажити вхідні данні
-download_model
+download_model()
 aussie_rain = joblib.load(MODEL_PATH)
 
 #aussie_rain = joblib.load('model/rain_pkg.joblib')
