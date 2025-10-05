@@ -27,6 +27,7 @@ def download_model():
         gdown.download(url, str(MODEL_PATH), quiet=False)
 
 # завантажити вхідні данні
+download_model
 aussie_rain = joblib.load(MODEL_PATH)
 
 #aussie_rain = joblib.load('model/rain_pkg.joblib')
