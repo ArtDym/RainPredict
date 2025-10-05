@@ -5,9 +5,9 @@ import joblib
 import gdown
 from pathlib import Path
 
-#MODEL_DIR  = Path("model")
-#MODEL_PATH = MODEL_DIR / "rain_pkg.joblib"
-MODEL_PATH = Path("rain_pkg.joblib")
+MODEL_DIR  = Path("model")
+MODEL_PATH = MODEL_DIR / "rain_pkg.joblib"
+MODEL_PATH = Path(MODEL_PATH)
 FILE_ID    = st.secrets["MODEL_FILE_ID"]
 
 def predict_input(single_input):
@@ -22,11 +22,11 @@ def predict_input(single_input):
 def download_model():
     # якщо моделі немає - завантажити
     if not MODEL_PATH.exists():
-        #MODEL_DIR.mkdir(parents=True, exist_ok=True)
+        MODEL_DIR.mkdir(parents=True, exist_ok=True)
         url = f"https://drive.google.com/uc?id={FILE_ID}"
-        st.write("⬇️ Downloading model from Google Drive...")
+        st.write("Downloading model from Google Drive...")
         gdown.download(url, str(MODEL_PATH), quiet=False)
-        st.write("⬇️  Model downloaded from Google Drive...")
+        st.write("Model downloaded from Google Drive")
 
 # завантажити вхідні данні
 download_model()
